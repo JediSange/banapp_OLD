@@ -6,7 +6,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 try:
     from local_settings import *
 except Exception as e:
-    print 'HERE'
+    ALLOWED_HOSTS = ['0.0.0.0']
+    API_BASE = os.environ['DEBUG']
+    API_KEY = os.environ['DEBUG']
+    API_STATIC_URL = os.environ['DEBUG']
+    DEBUG = os.environ['DEBUG']
+    MONGO_URL = os.environ['MONGOLAB_URI']
+    SECRET_KEY = os.environ['SECRET_KEY']
+    TEMPLATE_DEBUG = os.environ['DEBUG']
 
 # Application definition
 INSTALLED_APPS = (
@@ -40,7 +47,11 @@ DATABASES = {
 }
 
 SESSION_ENGINE = 'mongoengine.django.sessions'
-mongoengine.connect('banapp')
+
+if 'MONGO_URL' in locals():
+    mongoengine.connect('banapp', host=MONGO_URL)
+else:
+    mongoengine.connect('banapp')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
