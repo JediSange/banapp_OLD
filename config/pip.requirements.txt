@@ -1,6 +1,7 @@
 Django==1.7.1
 argparse==1.2.1
 django-ipware==0.1.0
+gunicorn==19.1.1
 mongoengine==0.8.7
 pymongo==2.7.2
 wsgiref==0.1.2
