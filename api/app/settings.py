@@ -3,7 +3,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Local settings
-from local_settings import *
+try:
+    from local_settings import *
+except Exception as e:
+    print 'HERE'
 
 # Application definition
 INSTALLED_APPS = (
