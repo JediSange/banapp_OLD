@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath api app.wsgi
+web: python hellodjango/manage.py runserver
