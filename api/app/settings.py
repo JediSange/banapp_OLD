@@ -7,13 +7,13 @@ try:
     from local_settings import *
 except Exception as e:
     ALLOWED_HOSTS = ['0.0.0.0']
-    API_BASE = os.environ['DEBUG']
-    API_KEY = os.environ['DEBUG']
-    API_STATIC_URL = os.environ['DEBUG']
+    API_BASE = os.environ['API_BASE']
+    API_KEY = os.environ['API_KEY']
+    API_STATIC_URL = os.environ['API_STATIC_URL']
     DEBUG = os.environ['DEBUG']
     MONGO_URL = os.environ['MONGOLAB_URI']
     SECRET_KEY = os.environ['SECRET_KEY']
-    TEMPLATE_DEBUG = os.environ['DEBUG']
+    TEMPLATE_DEBUG = os.environ['TEMPLATE_DEBUG']
 
 # Application definition
 INSTALLED_APPS = (
