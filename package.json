@@ -5,6 +5,7 @@
   "description": "Application for user-currated ban choices",
   "engineStrict": true,
   "engines": {
+    "node": "0.10.25",
     "npm": "~1.3.10"
   },
   "main": "Gruntfile.js",
