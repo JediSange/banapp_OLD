@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath api app.wsgi
+web: python api/manage.py runserver 0.0.0.0
