@@ -1,0 +1,7 @@
+SECRET_KEY = 'SOME_SECRET_KEY'
+DEBUG = True
+TEMPLATE_DEBUG = True
+ALLOWED_HOSTS = ['0.0.0.0']
+API_BASE = 'https://na.api.pvp.net'
+API_KEY = 'RIOT_KEY'
+API_STATIC_URL = 'http://ddragon.leagueoflegends.com/cdn/4.20.1/img/champion/'
