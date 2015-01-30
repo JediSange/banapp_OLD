@@ -5,8 +5,8 @@ from models import Champion, Vote
 
 def home(request):
   champions = Champion.objects()
-  return render_to_response('default.html')
-
+  return render_to_response('layouts/default.html')
+ 
 def vote(request, **data):
   ip = get_real_ip(request)
   if ip is not None:

@@ -4,9 +4,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Local settings
 try:
-    from local_settings import *
+    from env_settings.local_settings import *
 except Exception as e:
-    from heroku_settings import *
+    from env_settings.heroku_settings import *
 
 # Application definition
 INSTALLED_APPS = (
