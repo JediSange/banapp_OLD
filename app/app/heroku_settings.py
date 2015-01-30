@@ -1,3 +1,5 @@
+import os
+
 ALLOWED_HOSTS = ['0.0.0.0']
 API_BASE = os.environ['API_BASE']
 API_KEY = os.environ['API_KEY']
