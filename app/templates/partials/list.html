@@ -1,0 +1,13 @@
+{% block content %}
+  <ul class="champion-list">
+    {% for champion in champions %}
+      <li>
+        <div class="champion">
+          <span class="name">{{ champion.name }}</span>
+          <img src="{{ champion.image_url }}" />
+        </div>
+    {% empty %}
+      <li>There are no champions in the database!</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

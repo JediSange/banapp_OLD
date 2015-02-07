@@ -16,7 +16,7 @@ class Command(NoArgsCommand):
       # Build champion URL, Including image data
       champion_url = API_BASE + '/api/lol/static-data/na/v1.2/champion/'
       champion_url += str(champion['id'])
-      champion_url += '?champData=image&api_key=' + API_KEY
+      champion_url += '?champData=image,tags&api_key=' + API_KEY
 
       # Get data about champion from Riot API
       response = urllib2.urlopen(champion_url).read()
@@ -29,6 +29,7 @@ class Command(NoArgsCommand):
       toAdd.champion_id = champion['id']
       toAdd.name = champion_info['name']
       toAdd.image_url = API_STATIC_URL + champion_info['image']['full']
+      toAdd.tags = [tag.lower() for tag in champion_info['tags']]
       toAdd.score = 0
       toAdd.save()
     

@@ -3,9 +3,10 @@ import datetime
 
 class Champion(Document):
   champion_id = IntField(required=True, min_value=1, primary_key=True)
-  name = StringField(required=True)
   image_url = StringField()
+  name = StringField(required=True)
   score = IntField(required=True)
+  tags = ListField(field=StringField())
 
 class Vote(Document):
   ip_address = StringField(required=True)

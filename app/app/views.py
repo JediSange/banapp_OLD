@@ -4,8 +4,11 @@ from ipware.ip import get_real_ip, get_ip
 from models import Champion, Vote
 
 def home(request):
-  champions = Champion.objects()
-  return render_to_response('layouts/default.html')
+  champions = Champion.objects.order_by('-score', 'name')
+
+  params = {}
+  params['champions'] = champions
+  return render_to_response('partials/list.html', params)
  
 def vote(request, **data):
   ip = get_real_ip(request)
