@@ -1,8 +1,8 @@
 #BanApp
 Web app for anonymous voting on who to ban in League of Legends
 
-#Heroku Commands
-##Load champions and update verison URLs
+##Heroku Commands
+###Load champions and update verison URLs
 
     heroku run python app/manage.py load_champions
 
