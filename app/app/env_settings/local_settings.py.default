@@ -4,4 +4,4 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = ['0.0.0.0']
 API_BASE = 'https://na.api.pvp.net'
 API_KEY = 'RIOT_KEY'
-API_STATIC_URL = 'http://ddragon.leagueoflegends.com/cdn/5.3.1/img/champion/'
+API_STATIC_URL = 'http://ddragon.leagueoflegends.com/cdn'

@@ -1,7 +1,16 @@
+#BanApp
+Web app for anonymous voting on who to ban in League of Legends
+
+#Heroku Commands
+##Load champions and update verison URLs
+
+    heroku run python app/manage.py load_champions
+
 TODO List:
-- HTTP vs HTTPs agnostic
-- Find some way to update API_STATIC_URL with patch version?
 - Recalc score every day from votes, cron job?
-- Use Nginx to server application on Heroku
+- Use Nginx to serve application on Heroku
+
+Possible Improvements:
 - Pull images down to local for gzip compression
-- Explore idea of a sprite sheet of Champion portraits
+- Champion images as sprite sheets -- see if we can get from API
+- Bower for front end dependency management

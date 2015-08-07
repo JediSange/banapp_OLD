@@ -7,6 +7,15 @@ class Command(NoArgsCommand):
   help = "Pulls champions down from the Riot API"
   
   def handle_noargs(self, **options):
+    # Get current version from Riot API
+    version_url = API_BASE + '/api/lol/static-data/na/v1.2/versions'
+    version_url += '?api_key=' + API_KEY
+    response = urllib2.urlopen(version_url).read()
+    version = json.loads(response)[0]
+
+    # Build the image URL based on the version
+    api_image_url = API_STATIC_URL + "/" + version + "/img/champion/"
+
     # Handle fetching champions from Riot
     url = API_BASE + '/api/lol/na/v1.2/champion?api_key=' + API_KEY
     response = urllib2.urlopen(url).read()
@@ -28,7 +37,7 @@ class Command(NoArgsCommand):
       toAdd = Champion()
       toAdd.champion_id = champion['id']
       toAdd.name = champion_info['name']
-      toAdd.image_url = API_STATIC_URL + champion_info['image']['full']
+      toAdd.image_url = api_image_url + champion_info['image']['full']
       toAdd.tags = [tag.lower() for tag in champion_info['tags']]
       toAdd.score = 0
       toAdd.save()
